@@ -3,7 +3,7 @@ const webpack = require('webpack'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './app.jsx',
+    entry: './src/app.jsx',
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, "dist"),
@@ -80,7 +80,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'index.html')
+            template: path.resolve(__dirname, 'src/index.html')
         })
     ]
 };
