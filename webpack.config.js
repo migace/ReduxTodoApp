@@ -36,13 +36,13 @@ module.exports = {
                 ]
             },
             {
-                test: /\.tscss$/,
+                test: /\.tcss$/,
                 use: [
                     { loader: "style-loader" },
                     {
                         loader: "typings-for-css-modules-loader",
                         options: {
-                            namedexport: true,
+                            namedExport: true,
                             camelcase: true,
                             modules: true
                         }
@@ -72,7 +72,7 @@ module.exports = {
         ]
     },
     resolve: {        
-        extensions: ['.js', '.css', '.tsx', '.ts', '.scss']
+        extensions: ['.js', '.css', '.tsx', '.ts', '.scss', '.tcss']
     },
     output: {
         filename: 'bundle.js',

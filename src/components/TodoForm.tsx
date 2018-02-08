@@ -16,7 +16,12 @@ const TodoForm = ({submitHandler}: Props) => (
                         <input className="input" placeholder="do sth amazing" />
                     </p>
                     <p className="control">
-                        <button className="button is-primary">Add</button>
+                        <button className="button is-primary">
+                            <span className="icon">
+                                <i className="fas fa-plus"></i>                                
+                            </span>
+                            <span>Add</span>
+                        </button>
                     </p>
                 </div>
             </div>

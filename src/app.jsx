@@ -4,6 +4,7 @@ import * as ReactDOM from 'react-dom';
 import TodoApp from './containers/TodoApp';
 import store from './store';
 
+import './assets/css/fontawesome-all.min.css';
 import 'bulma/css/bulma.css';
 import './app.scss';
 
