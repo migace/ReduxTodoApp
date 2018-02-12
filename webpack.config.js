@@ -7,9 +7,9 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, "dist"),
-        compress: true,
+        // compress: true,
         port: 8000,
-        inline: true,
+        // inline: true,
         open: true
     },
     module: {
@@ -34,25 +34,28 @@ module.exports = {
                     { loader: "css-loader" },
                     { loader: "sass-loader" }
                 ]
-            },
-            {
-                test: /\.tcss$/,
-                use: [
-                    { loader: "style-loader" },
-                    {
-                        loader: "typings-for-css-modules-loader",
-                        options: {
-                            namedExport: true,
-                            camelcase: true,
-                            modules: true
-                        }
-                    },
-                    { loader: "sass-loader" }
-                ]
-            },
+            }, 
             {
                 test: /\.css$/,
+                include: [
+                    path.join(__dirname, 'src'),
+                    path.join(__dirname, 'node_modules'),
+                ],
                 use: [ 'style-loader', 'css-loader' ]
+            },          
+            {
+                test: /\.tcss$/,
+                include: path.join(__dirname, 'src/components'),
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'typings-for-css-modules-loader',
+                        options: {
+                            modules: true,
+                            namedExport: true
+                        }
+                    }
+                ] 
             },
             {
                 test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -72,7 +75,7 @@ module.exports = {
         ]
     },
     resolve: {        
-        extensions: ['.js', '.css', '.tsx', '.ts', '.scss', '.tcss']
+        extensions: ['.js', '.css', '.tsx', '.ts', '.scss', '.tcss', '/index.js', '/index.tsx', '/index.ts']
     },
     output: {
         filename: 'bundle.js',

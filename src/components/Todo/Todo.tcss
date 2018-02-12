@@ -1,0 +1,11 @@
+.completed {
+    text-decoration: line-through;
+}
+
+.icon {
+    pointer-events: all !important;
+}
+
+.edit {
+    right: 25px !important;
+}

@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dashboard -c magenta -t 'ReduxTodoApp' -- webpack-dev-server --config webpack.config.js --progress",
-    "build": "webpack-dev-server --open"
+    "build": "webpack-dev-server --open",
+    "generate-barrels": "barrelsby --delete"
   },
   "dependencies": {
     "@types/react": "^16.0.31",
@@ -15,6 +16,7 @@
     "@types/redux": "^3.6.0",
     "awesome-typescript-loader": "^3.4.1",
     "bulma": "^0.6.2",
+    "fsevents": "^1.1.3",
     "js-uuid": "^0.0.6",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -25,10 +27,12 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "@types/react-redux": "^5.0.14",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "barrelsby": "0.0.8",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",

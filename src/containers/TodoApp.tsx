@@ -1,8 +1,7 @@
 import * as React from 'react';
 import TodoListContainer from './TodoList';
-import TodoForm from '../components/TodoForm';
-import { addTodo } from '../actions/todo';
-import store from '../store';
+import TodoForm from '../components/TodoForm/index';
+import { addTodoRequest } from '../actions/todo';
 
 class TodoApp extends React.Component {
     constructor(props: any) {
@@ -13,10 +12,12 @@ class TodoApp extends React.Component {
         e.preventDefault();
 
         const inputNode = (e.target as Element).querySelector('input'),
-              content = inputNode.value;              
+              text = inputNode.value;
 
-        store.dispatch(addTodo(content));
-        inputNode.value = '';
+        if (text) {
+            addTodoRequest(text);
+            inputNode.value = '';
+        }
     }
 
     render() {
